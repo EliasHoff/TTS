@@ -1,0 +1,17 @@
+{
+    "a": {
+        "name": "giphy",
+        "props": {},
+        "methods": {},
+        "staticRenderFns": [],
+        "_compiled": true,
+        "__file": "src/components/Giphy.vue",
+        "beforeCreate": [
+            null
+        ],
+        "beforeDestroy": [
+            null
+        ],
+        "_Ctor": {}
+    }
+}

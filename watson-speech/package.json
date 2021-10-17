@@ -1,0 +1,135 @@
+{
+  "_from": "watson-speech",
+  "_id": "watson-speech@0.39.0",
+  "_inBundle": false,
+  "_integrity": "sha512-PiA3/tv7fXspJbE3lhTQ4AuRyF9+U970V9hjnv+fBX5giO9/36Qd60lcqfkLzwvDjLMQ+SXYSzhpIEZeEVaJJg==",
+  "_location": "/watson-speech",
+  "_phantomChildren": {
+    "inherits": "2.0.4",
+    "string_decoder": "1.1.1",
+    "util-deprecate": "1.0.2"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "watson-speech",
+    "name": "watson-speech",
+    "escapedName": "watson-speech",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/watson-speech/-/watson-speech-0.39.0.tgz",
+  "_shasum": "d4d4bc148df483373d2fb46db50dbab771251611",
+  "_spec": "watson-speech",
+  "_where": "C:\\Users\\Elias\\Desktop\\HTL\\APP\\TTS",
+  "bugs": {
+    "url": "https://github.com/watson-developer-cloud/speech-javascript-sdk/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Nathan Friedly",
+      "url": "http://nfriedly.com"
+    },
+    {
+      "name": "German Attanasio",
+      "url": "https://github.com/germanattanasio"
+    },
+    {
+      "name": "Dustin Popp",
+      "url": "https://github.com/dpopp07"
+    }
+  ],
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1",
+    "buffer-from": "^1.1.1",
+    "camelcase": "^6.2.0",
+    "clone": "^2.1.2",
+    "core-js": "^3.8.3",
+    "defaults": "^1.0.3",
+    "get-user-media-promise": "^1.1.4",
+    "ibm-watson": "^6.0.2",
+    "lodash.pullallwith": "^4.7.0",
+    "microphone-stream": "^5.1.0",
+    "nodeify-fetch": "^1.0.1",
+    "npm": "^6.14.11",
+    "object.assign": "^4.1.2",
+    "path": "^0.12.7",
+    "readable-blob-stream": "^1.1.0",
+    "readable-stream": "^3.6.0",
+    "websocket": "^1.0.33",
+    "whatwg-fetch": "^3.5.0"
+  },
+  "deprecated": false,
+  "description": "IBM Watson Speech to Text and Text to Speech SDK for web browsers.",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "buffer": "^6.0.3",
+    "concat-stream": "^2.0.0",
+    "envify": "^4.1.0",
+    "envify-loader": "^0.1.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "expect.js": "^0.3.1",
+    "jquery": "^3.5.1",
+    "jsdoc": "^3.6.6",
+    "karma": "^6.0.2",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-eslint": "^2.2.0",
+    "karma-express-http-server": "0.0.1",
+    "karma-firefox-launcher": "^2.1.0",
+    "karma-mocha": "^2.0.1",
+    "memory-fs": "^0.5.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1",
+    "serve-static": "^1.14.1",
+    "sinon": "^9.2.4",
+    "stream-browserify": "^3.0.0",
+    "transform-loader": "^0.2.4",
+    "uglify-js": "^3.12.5",
+    "watchify": "^3.11.1",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "http://watson-speech.mybluemix.net/",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "watson-speech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson-developer-cloud/speech-javascript-sdk.git"
+  },
+  "scripts": {
+    "autofix": "eslint . --fix",
+    "browserify": "browserify index.js -t [ babelify --presets [ @babel/preset-env ] ]  -t [ envify ] --standalone WatsonSpeech --outfile dist/watson-speech.js",
+    "build": "npm run webpack && npm run minify",
+    "doc": "jsdoc -c scripts/jsdoc/config.json --debug",
+    "lint": "eslint .",
+    "minify": "uglifyjs --source-map --compress --mangle --output dist/watson-speech.min.js --beautify \"beautify=false,preamble='// IBM Watson Speech JavaScript SDK\\n// $npm_package_version\\n// Generated at `date`\\n// Copyright IBM ($npm_package_license)\\n// $npm_package_homepage'\" dist/watson-speech.js",
+    "prettier": "prettier --write *.{js,jsx,json,css,scss,yaml}",
+    "test": "npm run lint && npm run test-offline",
+    "test-integration": "TEST_MODE=integration karma start --single-run",
+    "test-offline": "karma start --single-run",
+    "version": "npm run build && git add -A dist",
+    "watch-doc": "nodemon --watch ./ --ignore ./doc --ext js,tmpl,json --exec npm run doc",
+    "watch-test": "karma start",
+    "watchify": "watchify index.js --standalone WatsonSpeech --outfile dist/watson-speech.js --debug --verbose",
+    "webpack": "webpack"
+  },
+  "version": "0.39.0"
+}
